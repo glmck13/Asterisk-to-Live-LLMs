@@ -128,7 +128,7 @@ class BedrockAudioSocketManager:
     def __init__(self, reader, writer):
         self.reader = reader
         self.writer = writer
-        self.model_id = os.getenv("AWS_MODEL_NAME", "amazon.nova-sonic-v1:0")
+        self.model_id = os.getenv("AWS_MODEL")
         self.region = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
         self.audio_output_queue = asyncio.Queue()
         self.is_active = True
