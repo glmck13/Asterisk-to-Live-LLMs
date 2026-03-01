@@ -18,7 +18,7 @@ git clone 'https://github.com/glmck13/Asterisk-to-Voice-LLMs.git'
 mv Asterisk-to-Voice-LLMs local; cd local
 find . -name '*.sh' -o -name '*.py' | xargs -t chmod +x
 cd AWS-Nova-Sonic
-python3 -m venv venv
+python3.13 -m venv venv
 bash --rcfile ./venv/bin/activate -i
 pip3 install -r requirements.txt –force-reinstall
 exit
