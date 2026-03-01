@@ -8,13 +8,11 @@ Although the scripts can be hosted anywhere, it’s easiest to simply install an
 + Raspberry Pi 4B, Debian 12, Asterisk 20.7.0, FreePBX 17.0.28 (Google model only since AWS requires Python3.12+, but Debian 12 ships with Python 3.11)
 + Vultr cloud server, Debian 12, Asterisk 22.5.2, FreePBX 17.0.28, (Python3.13 compiled separately to run AWS model)
 
-## Note: Installing Python3.12+ on Debian 12 systems
-The AWS API requires Python3.12+, so if your OS doesn't have that version installed by default (as is the case with Debian 12), you'll need to retrieve/build a suitable version yourself.  You'll find instructions for building Python3 releases from source [here](https://docs.python.org/3/).  After compiling, you'll want to install the version using "make --altinstall" so the new version does not replace the OS default. 
+## Getting the right version of Python3
+Google's Gemini package is compatible with Python 3.9+, while AWS's Nova Sonic package requires Python3.12+.  If your OS doesn't have an appropriate version of Python installed to run a model (e.g. Debian 12 ships with 3.11), you'll need to retrieve/build a suitable version yourself.  Instructions for building Python3 releases from source can be found [here](https://docs.python.org/3/).  After compiling, you'll want to install the version using "make --altinstall" so the new version does not replace the OS default.  
 
 ## Installing the scripts
-These instructions assume the HOME directory for the “asterisk” user is set to /var/lib/asterisk.  If “asterisk” does not yet have an assigned login shell, edit /etc/passwd and set its login shell to /bin/bash. If you don’t want to assign “asterisk” a password just "sudo su – asterisk" to login.
-
-*Also, make sure to invoke the Python3.12+ binary when creating the venv for AWS so that's the version used when the environment is activated.*     
+These instructions assume the HOME directory for the “asterisk” user is set to /var/lib/asterisk.  If “asterisk” does not yet have an assigned login shell, edit /etc/passwd and set its login shell to /bin/bash. If you don’t want to assign “asterisk” a password just "sudo su – asterisk" to login.  *Also, make sure to invoke the Python3.12+ binary when creating the venv for AWS so that version is used when the environment is activated.*  
 
 + First download and install the scripts as "asterisk":
 ```
